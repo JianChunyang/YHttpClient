@@ -6,7 +6,7 @@ s.summary      = "YHttpClient is a network framework."
 s.license          = { :type => 'MIT' }
 s.homepage         = 'https://github.com/JianChunyang'
 s.authors          = { 'young yang' => 'jianchun.yang@outlook.com' }
-s.source       = { :git => "https://github.com/JianChunyang/YHttpClient.git", :tag => "1.0.0" }
+s.source       = { :git => "https://github.com/JianChunyang/YHttpClient.git", :tag => s.version }
 s.source_files  = "YHttpClient", "YHttpClient/**/*.{h,m}"
 s.framework        = 'Foundation'
 s.platform     = :ios, "8.0"
