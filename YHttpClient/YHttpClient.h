@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import "HttpClient.h"
-#import "RSACrypto.h"
-#import "Converter.h"
-#import "Cookies.h"
-#import "YBaseHttp.h"
+#import "HClient.h"
+//#import "HttpClient.h"
+//#import "RSACrypto.h"
+//#import "Converter.h"
+//#import "Cookies.h"
+//#import "YBaseHttp.h"
 
 
 //! Project version number for YHttpClient.

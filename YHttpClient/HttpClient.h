@@ -8,12 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-//@interface HttpClient : NSObject
-//
-//@end
-
-#import <Foundation/Foundation.h>
-
 #define KMimeType  NSString*
 #define KMimeTypeJSON @"application/json"
 #define KMimeTypeHTML @"text/html"

@@ -100,6 +100,8 @@
 		340626F51F21E22800D47E23 /* RSACrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 340626EB1F21E22800D47E23 /* RSACrypto.m */; };
 		340626F61F21E22800D47E23 /* YBaseHttp.h in Headers */ = {isa = PBXBuildFile; fileRef = 340626EC1F21E22800D47E23 /* YBaseHttp.h */; };
 		340626F71F21E22800D47E23 /* YBaseHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 340626ED1F21E22800D47E23 /* YBaseHttp.m */; };
+		340626FA1F21E59E00D47E23 /* HClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 340626F81F21E59E00D47E23 /* HClient.h */; };
+		340626FB1F21E59E00D47E23 /* HClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 340626F91F21E59E00D47E23 /* HClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +210,8 @@
 		340626EB1F21E22800D47E23 /* RSACrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSACrypto.m; sourceTree = "<group>"; };
 		340626EC1F21E22800D47E23 /* YBaseHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBaseHttp.h; sourceTree = "<group>"; };
 		340626ED1F21E22800D47E23 /* YBaseHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBaseHttp.m; sourceTree = "<group>"; };
+		340626F81F21E59E00D47E23 /* HClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HClient.h; sourceTree = "<group>"; };
+		340626F91F21E59E00D47E23 /* HClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +372,8 @@
 				340626ED1F21E22800D47E23 /* YBaseHttp.m */,
 				340626D01F21C31700D47E23 /* Info.plist */,
 				340626D11F21C31700D47E23 /* YHttpClient.h */,
+				340626F81F21E59E00D47E23 /* HClient.h */,
+				340626F91F21E59E00D47E23 /* HClient.m */,
 			);
 			path = YHttpClient;
 			sourceTree = "<group>";
@@ -429,6 +435,7 @@
 				340626771F21AAD800D47E23 /* cast.h in Headers */,
 				340626B01F21AAD900D47E23 /* tls1.h in Headers */,
 				340626B61F21AAD900D47E23 /* x509.h in Headers */,
+				340626FA1F21E59E00D47E23 /* HClient.h in Headers */,
 				340626F61F21E22800D47E23 /* YBaseHttp.h in Headers */,
 				340626A01F21AAD800D47E23 /* rand.h in Headers */,
 				340626A61F21AAD800D47E23 /* seed.h in Headers */,
@@ -565,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				340626F31F21E22800D47E23 /* HttpClient.m in Sources */,
+				340626FB1F21E59E00D47E23 /* HClient.m in Sources */,
 				340626F71F21E22800D47E23 /* YBaseHttp.m in Sources */,
 				340626F51F21E22800D47E23 /* RSACrypto.m in Sources */,
 				340626EF1F21E22800D47E23 /* Converter.m in Sources */,
