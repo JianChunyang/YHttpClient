@@ -1,10 +1,16 @@
 //
-//  YHttpClient.h
+//  HttpClient.h
 //  YHttpClient
 //
 //  Created by chun on 2017/7/21.
 //  Copyright © 2017年 chun. All rights reserved.
 //
+
+#import <Foundation/Foundation.h>
+
+//@interface HttpClient : NSObject
+//
+//@end
 
 #import <Foundation/Foundation.h>
 
@@ -37,10 +43,11 @@ typedef void (^completeRequestCallback)(NSURLRequest *request, NSURLResponse *re
  以block调用的方式极为异步模式, 本接口理论上只返回json格式的数据，调用api直接返回的数据为NSData类型
  可以用过response内的content-type字段对返回数据类型进行判断，
  
-如果用到其它第三方网络服务请使用系统原生的API实现或者AFNetworking
-*/
+ 如果用到其它第三方网络服务请使用系统原生的API实现或者AFNetworking
+ */
 
 @interface HttpClient : NSObject
+
 
 
 //判断数据是词典，http请求成功数据指令执行成功 {state: success}
@@ -53,11 +60,11 @@ typedef void (^completeRequestCallback)(NSURLRequest *request, NSURLResponse *re
 /*
  单例模式，在请求的方法内path要传全url
  e.g:http://api.idelos.cn/path/
-*/
+ */
 +(id)sharedInstance;
 
-/* 
- 普通实例模式，需要使用域名初始化，结束不带/ 
+/*
+ 普通实例模式，需要使用域名初始化，结束不带/
  e.g: http://api.idelos.cn
  */
 -(id)initWithDomain:(NSString*)domain;
@@ -72,8 +79,8 @@ typedef void (^completeRequestCallback)(NSURLRequest *request, NSURLResponse *re
  * 方法
  
  +(void)saveCookies2Userdefaults:(NSArray *)cookies{
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject: cookies];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey: KUserDefaultCookiesKey];
+ NSData *data = [NSKeyedArchiver archivedDataWithRootObject: cookies];
+ [[NSUserDefaults standardUserDefaults] setObject:data forKey: KUserDefaultCookiesKey];
  }
  
  *
@@ -146,18 +153,16 @@ typedef void (^completeRequestCallback)(NSURLRequest *request, NSURLResponse *re
     withErrorBlock:(failWithError)errorBlock;
 
 -(void)postWithPath:(NSString*)path andData:(id)data
-  withSuccessBlock:(finishedOnSuccess)successBlock
-    withErrorBlock:(failWithError)errorBlock;
+   withSuccessBlock:(finishedOnSuccess)successBlock
+     withErrorBlock:(failWithError)errorBlock;
 
 -(void)putWithPath:(NSString*)path andData:(id)data
   withSuccessBlock:(finishedOnSuccess)successBlock
     withErrorBlock:(failWithError)errorBlock;
 
 -(void)deleteWithPath:(NSString*)path andData:(id)data
-  withSuccessBlock:(finishedOnSuccess)successBlock
-    withErrorBlock:(failWithError)errorBlock;
+     withSuccessBlock:(finishedOnSuccess)successBlock
+       withErrorBlock:(failWithError)errorBlock;
 
 
 @end
-
-

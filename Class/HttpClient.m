@@ -1,11 +1,10 @@
 //
-//  YHttpClient.h
+//  HttpClient.m
 //  YHttpClient
 //
 //  Created by chun on 2017/7/21.
 //  Copyright © 2017年 chun. All rights reserved.
 //
-
 
 #import "HttpClient.h"
 #import "Cookies.h"
@@ -37,7 +36,7 @@
     if (self) {
         _domain = domain;
     }
-
+    
     return self;
 }
 
@@ -239,14 +238,14 @@
         if (nil == _error) {
             [self setError:[NSError errorWithDomain:@"request is nil" code:-255 userInfo:@{@"object":self}]];
         }
-
+        
         return nil;
     }
-
+    
     
     id data = [[YBaseHttp sharedInstance] sendSynchronousRequest:request
-                                                returningResponse:&_response
-                                                            error:&_error];
+                                               returningResponse:&_response
+                                                           error:&_error];
     
     
     if(nil != self.completeCallback){
@@ -259,7 +258,7 @@
 
 -(void)addHeader:(NSString*)header value:(NSString*)value
 {
-
+    
     [self setHeaders:@{header :value}];
     
 }
@@ -267,12 +266,12 @@
 
 -(NSMutableURLRequest *)setRequestWithPath:(NSString*)urlString
 {
-
-
+    
+    
     if (_domain) {
         urlString = [NSString stringWithFormat:@"%@%@", _domain, urlString];
     }
-
+    
     NSString* encodedString = [urlString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
     
     NSMutableURLRequest *request =  [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:encodedString]
@@ -301,15 +300,15 @@
     
     if(nil == path || nil == method)return nil;
     
-
+    
     NSMutableString *urlString = [[NSMutableString alloc]initWithString:path];
     if (params) {
         [urlString appendFormat:@"?%@",[self urlEncode:params]];
     }
-
+    
     NSMutableURLRequest *request = [self setRequestWithPath:urlString];
     [request setHTTPMethod: method];
-
+    
     
     return request;
 }
@@ -321,7 +320,7 @@
     
     
     NSMutableURLRequest *request = [self setRequestWithPath:path];
-
+    
     
     [request setHTTPMethod: method];
     if([_contentType isEqualToString: KMimeTypeJSON]){
@@ -334,8 +333,8 @@
     else{
         @throw @"Unsupported type, only for application/json";
     }
-
-
+    
+    
     return  request;
     
 }
@@ -354,5 +353,3 @@
 
 
 @end
-
-
